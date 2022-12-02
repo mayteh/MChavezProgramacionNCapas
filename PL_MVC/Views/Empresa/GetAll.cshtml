@@ -1,0 +1,52 @@
+﻿@model ML.Empresa
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Empresa</h2>
+    <p>Aqui podra ver los datos relacionados con la empresa asi como editar y eliminar</p>
+
+    <div class=" row">
+        <div style="float:right">
+            @Html.ActionLink("Agregar", "Form", "Empresa", htmlAttributes: new { @class = "btn btn-success" }) @*Agregar un boton + *@
+        </div>
+    </div>
+
+    <hr />
+
+    <dir class=" row">
+        <table class=" table table-responsive">
+            <thead class="thead-dark">
+                <tr>
+                    @*<th>Hace referencia a las cabeceras de la tabla</th>*@
+                    <th>Editar</th>
+                    <th class=" hidden">IdEmpresa</th> @*se oculta el id del usuario ya que no es necesario el mostrarlo*@
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Direccion Web</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ML.Empresa empresa in Model.Empresas)
+                {
+                    <tr>
+                        <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Empresa", new { IdEmpresa = empresa.IdEmpresa})"></a></td>
+                        <td class="hidden">@empresa.IdEmpresa</td>
+                        <td>@empresa.NombreEmpresa</td> @*se concatena para que muestre todo junto*@
+                        <td>@empresa.Telefono</td>
+                        <td>@empresa.Email</td>
+                        <td>@empresa.DireccionWeb</td>
+                        <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Empresa", new { IdEmpresa = empresa.IdEmpresa })" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+                    </tr>
+                }
+            <tbody>
+        </table>
+    </dir>
+</div>
+
+    <h2>GetAll</h2>
+
