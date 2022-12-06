@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Castle.MicroKernel.SubSystems.Conversion;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Runtime;
@@ -25,7 +27,10 @@ namespace ML //Model Layer
         public string Genero { get; set; }    
         public string FechaNacimiento { get; set; }
         public List<object> Usuarios { get; set; }
-        public byte[] Imagen { get; set; }
+
+        [Column(TypeName = "binary")]
+        public string Imagen { get; set; }
+        public bool Status { get; set; }
 
         //Propiedades de navegacion
 

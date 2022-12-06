@@ -96,7 +96,7 @@ namespace PL_MVC.Controllers
             //HttpPostedFileBase permite recuperar el elemento de tipo "file" con el nombre asignado "ImagenData"
             if (file.ContentLength > 0) //si en el file encuentra valores
             {
-                usuario.Imagen = ConvertToBytes(file); //los convierte a byte y asigna a usuario.Imagen
+                usuario.Imagen = null; //ConvertToBytes(file); //los convierte a byte y asigna a usuario.Imagen
             }
 
             if (usuario.IdUsuario == 0)

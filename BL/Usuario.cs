@@ -587,7 +587,7 @@ namespace BL //Bussines Layer
             {
                 using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())
                 {
-                    int query = contex.UsuarioAdd(usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol,usuario.Imagen,usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia);
+                    var query = contex.UsuarioAdd(usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia, usuario.Status);
 
                         if (query > 0)
                         {
@@ -662,7 +662,7 @@ namespace BL //Bussines Layer
             return result;
 
         }
-        public static ML.Result GetAllEF()
+        public static ML.Result GetAllEF(ML.Usuario usuario)
         {
             ML.Result result = new ML.Result();
             try
@@ -670,6 +670,7 @@ namespace BL //Bussines Layer
                 using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())//Se obtiene la conexion
                 {
                     var usuarios = contex.UsuarioGetAll().ToList();
+                    //var usuarios = contex.Usuarios
 
                     result.Objects = new List<object>();
 
@@ -678,7 +679,7 @@ namespace BL //Bussines Layer
                             foreach (var objeto in usuarios)// Sacar los row de nuestra lista
                             {
                             
-                            ML.Usuario usuario = new ML.Usuario();
+                            //ML.Usuario usuario = new ML.Usuario();
 
                             usuario.IdUsuario = objeto.IdUsuario;
                             usuario.NombreUsuario = objeto.NombreUsuario;
@@ -700,7 +701,7 @@ namespace BL //Bussines Layer
 
                             usuario.Imagen = objeto.Imagen;
 
-                            //usuario.Imagen = byte[].Parse(objeto.Imagen.ToString());
+                            //usuario.Imagen = objeto.Imagen.ToString();
                             //DIRECCION//
                             usuario.Direccion = new ML.Direccion();
                             usuario.Direccion.IdDireccion = objeto.IdDireccion;
@@ -772,7 +773,7 @@ namespace BL //Bussines Layer
                         usuario.Rol = new ML.Rol();
                         usuario.Rol.IdRol = byte.Parse(tableUsuario.IdRol.ToString());
 
-                        usuario.Imagen = tableUsuario.Imagen;
+                        usuario.Imagen = null; //tableUsuario.Imagen;
 
                         usuario.Direccion = new ML.Direccion();
                         usuario.Direccion.IdDireccion = tableUsuario.IdDireccion;

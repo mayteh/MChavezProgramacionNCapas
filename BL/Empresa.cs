@@ -304,7 +304,7 @@ namespace BL
             {
                 using (DL_EF.MChavezProgramacionNCapasEntities context = new DL_EF.MChavezProgramacionNCapasEntities())
                 {
-                    var usuarios = context.EmpresaAdd(empresa.NombreEmpresa, empresa.Telefono, empresa.Email, empresa.DireccionWeb);
+                    var usuarios = context.EmpresaAdd(empresa.NombreEmpresa, empresa.Telefono, empresa.Email, empresa.DireccionWeb, empresa.Logo);
 
                         if (usuarios > 0)
                         {
@@ -331,7 +331,7 @@ namespace BL
             {
                 using (DL_EF.MChavezProgramacionNCapasEntities context = new DL_EF.MChavezProgramacionNCapasEntities())
                 {
-                    var query = context.EmpresaUpdate(empresa.IdEmpresa, empresa.NombreEmpresa, empresa.Telefono, empresa.Email, empresa.DireccionWeb);
+                    var query = context.EmpresaUpdate(empresa.IdEmpresa, empresa.NombreEmpresa, empresa.Telefono, empresa.Email, empresa.DireccionWeb, empresa.Logo);
 
                         if (query > 0)
                         {
@@ -386,7 +386,8 @@ namespace BL
                 //Se obtiene la conexion a la base de datos
                 using (DL_EF.MChavezProgramacionNCapasEntities context = new DL_EF.MChavezProgramacionNCapasEntities())
                 {
-                    var query = context.EmpresaGetAll().ToList();
+                    string valorNombre = null;
+                    var query = context.EmpresaGetAll(valorNombre).ToList();
                     result.Objects = new List<object>(); //Instanciar la lista para dar a entender que se trata de una lista lo que va a traer
 
                     if (query != null)

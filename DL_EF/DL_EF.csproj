@@ -50,6 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aseguradora.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AseguradoraGetAll_Result.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AseguradoraGetById_Result.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Colonia.cs">
       <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
     </Compile>
@@ -57,6 +66,15 @@
       <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="Direccion.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoGetAll_Result.cs">
+      <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoGetById_Result.cs">
       <DependentUpon>MChavezProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="Empresa.cs">

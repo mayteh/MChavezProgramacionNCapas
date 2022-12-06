@@ -26,7 +26,8 @@ namespace DL_EF
         public string UserName { get; set; }
         public string Email { get; set; }
         public Nullable<byte> IdRol { get; set; }
-        public byte[] Imagen { get; set; }
+        public string Imagen { get; set; }
+        public Nullable<bool> Status { get; set; }
         public string NombreRol { get; set; }
         public int IdDireccion { get; set; }
         public string Calle { get; set; }

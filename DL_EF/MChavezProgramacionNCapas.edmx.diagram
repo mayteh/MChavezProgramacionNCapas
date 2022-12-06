@@ -16,10 +16,14 @@
         <AssociationConnector Association="MChavezProgramacionNCapasModel.FK_Pais" />
         <EntityTypeShape EntityType="MChavezProgramacionNCapasModel.Direccion" Width="1.5" PointX="9.75" PointY="3.25" />
         <AssociationConnector Association="MChavezProgramacionNCapasModel.Fk_Colonia" />
-        <EntityTypeShape EntityType="MChavezProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="MChavezProgramacionNCapasModel.Aseguradora" Width="1.5" PointX="5.25" PointY="9" />
+        <EntityTypeShape EntityType="MChavezProgramacionNCapasModel.Empleado" Width="1.5" PointX="8" PointY="9.25" />
+        <AssociationConnector Association="MChavezProgramacionNCapasModel.FK__Empleado__IdEmpr__71D1E811" />
+        <EntityTypeShape EntityType="MChavezProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="9.125" />
+        <AssociationConnector Association="MChavezProgramacionNCapasModel.fk_UsuarioAseguradora" />
         <AssociationConnector Association="MChavezProgramacionNCapasModel.Fk_Usuario" />
         <AssociationConnector Association="MChavezProgramacionNCapasModel.FK_UsuarioRol" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

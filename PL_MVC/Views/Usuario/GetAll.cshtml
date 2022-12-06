@@ -78,6 +78,7 @@
                         @if (usuario.Imagen != null)
                         {
                             <td><img src="data:image/jpeg;base64, @Convert.ToBase64String(usuario.Imagen)" style="height:160px; width:160px;" /></td>
+                            @*<td><img src="data:image/jpeg;base64, @usuario.Imagen" style="height:160px; width:160px;" /></td>*@
                         }
                         else
                         {
