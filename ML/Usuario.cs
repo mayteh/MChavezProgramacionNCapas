@@ -28,8 +28,7 @@ namespace ML //Model Layer
         public string FechaNacimiento { get; set; }
         public List<object> Usuarios { get; set; }
 
-        [Column(TypeName = "binary")]
-        public string Imagen { get; set; }
+        public byte[] Imagen { get; set; }
         public bool Status { get; set; }
 
         //Propiedades de navegacion

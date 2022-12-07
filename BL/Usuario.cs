@@ -580,61 +580,61 @@ namespace BL //Bussines Layer
 
         ////////////////////// ENTITY FRAMEWORK //////////////////////////////////////
 
-        public static ML.Result AddEF(ML.Usuario usuario)
-        {
-            ML.Result result = new ML.Result(); //instancia de Result
-            try
-            {
-                using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())
-                {
-                    var query = contex.UsuarioAdd(usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia, usuario.Status);
+        //public static ML.Result AddEF(ML.Usuario usuario)
+        //{
+        //    ML.Result result = new ML.Result(); //instancia de Result
+        //    try
+        //    {
+        //        using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())
+        //        {
+        //            var query = contex.UsuarioAdd(usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia, usuario.Status);
 
-                        if (query > 0)
-                        {
-                        result.Message = "El usuario se agrego con exito";
-                        }
-                }
-                result.Correct = true;
-            }
+        //                if (query > 0)
+        //                {
+        //                result.Message = "El usuario se agrego con exito";
+        //                }
+        //        }
+        //        result.Correct = true;
+        //    }
 
-            catch (Exception ex)
-            {
-                result.Correct = false;
-                result.Ex = ex;
-                result.Message = "Ocurrio un error al cargar la información" + result.Ex;
-                throw;
-            }//(Algún error en el programa)
-            return result;
-        }
-        public static ML.Result UpdateEF(ML.Usuario usuario)
-        {
-            ML.Result result = new ML.Result();
-            try
-            {
-                using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())
-                {
-                    var query = contex.UsuarioUpdate(usuario.IdUsuario, usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia);
+        //    catch (Exception ex)
+        //    {
+        //        result.Correct = false;
+        //        result.Ex = ex;
+        //        result.Message = "Ocurrio un error al cargar la información" + result.Ex;
+        //        throw;
+        //    }//(Algún error en el programa)
+        //    return result;
+        //}
+        //public static ML.Result UpdateEF(ML.Usuario usuario)
+        //{
+        //    ML.Result result = new ML.Result();
+        //    try
+        //    {
+        //        using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())
+        //        {
+        //            var query = contex.UsuarioUpdate(usuario.IdUsuario, usuario.NombreUsuario, usuario.ApellidoPaternoU, usuario.ApellidoMaternoU, usuario.FechaNacimiento, usuario.Genero, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia);
        
 
-                        if(query > 0)
-                        {
-                            result.Message = "EL dato se modifico correctamente";
-                        }
+        //                if(query > 0)
+        //                {
+        //                    result.Message = "EL dato se modifico correctamente";
+        //                }
                     
-                }
-                result.Correct = true;
-            }// cierre de try
-            catch (Exception ex)
-            {
-                result.Correct = false;
-                result.Ex = ex;
-                result.Message = "Ocurrio un error al cargar la información" + result.Ex;
-                throw;
-            }//(Algún error en el programa)
-            return result;
+        //        }
+        //        result.Correct = true;
+        //    }// cierre de try
+        //    catch (Exception ex)
+        //    {
+        //        result.Correct = false;
+        //        result.Ex = ex;
+        //        result.Message = "Ocurrio un error al cargar la información" + result.Ex;
+        //        throw;
+        //    }//(Algún error en el programa)
+        //    return result;
 
 
-        }
+        //}
         public static ML.Result DelateEF(ML.Usuario usuario)
         {
             ML.Result result = new ML.Result();
@@ -662,87 +662,87 @@ namespace BL //Bussines Layer
             return result;
 
         }
-        public static ML.Result GetAllEF(ML.Usuario usuario)
-        {
-            ML.Result result = new ML.Result();
-            try
-            {
-                using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())//Se obtiene la conexion
-                {
-                    var usuarios = contex.UsuarioGetAll().ToList();
-                    //var usuarios = contex.Usuarios
+        //public static ML.Result GetAllEF(ML.Usuario usuario)
+        //{
+        //    ML.Result result = new ML.Result();
+        //    try
+        //    {
+        //        using (DL_EF.MChavezProgramacionNCapasEntities contex = new DL_EF.MChavezProgramacionNCapasEntities())//Se obtiene la conexion
+        //        {
+        //            var usuarios = contex.UsuarioGetAll().ToList();
+        //            //var usuarios = contex.Usuarios
 
-                    result.Objects = new List<object>();
+        //            result.Objects = new List<object>();
 
-                    if (usuarios != null)//Si las rows dentro de nuestra lista query es diferente de null
-                     {
-                            foreach (var objeto in usuarios)// Sacar los row de nuestra lista
-                            {
+        //            if (usuarios != null)//Si las rows dentro de nuestra lista query es diferente de null
+        //             {
+        //                    foreach (var objeto in usuarios)// Sacar los row de nuestra lista
+        //                    {
                             
-                            //ML.Usuario usuario = new ML.Usuario();
+        //                    //ML.Usuario usuario = new ML.Usuario();
 
-                            usuario.IdUsuario = objeto.IdUsuario;
-                            usuario.NombreUsuario = objeto.NombreUsuario;
-                            usuario.ApellidoPaternoU = objeto.ApellidoPaterno;
-                            usuario.ApellidoMaternoU = objeto.ApellidoMaterno;
-                            usuario.FechaNacimiento = objeto.FechaNacimiento.ToString("dd-MM-yyyy");
-                            usuario.Genero = objeto.Sexo;
-                            usuario.Password = objeto.Password;
-                            usuario.Telefono = objeto.Telefono;
-                            usuario.Celular = objeto.Celular;
-                            usuario.Curp = objeto.Curp;
-                            usuario.UserName = objeto.UserName;
-                            usuario.Email = objeto.Email;
+        //                    usuario.IdUsuario = objeto.IdUsuario;
+        //                    usuario.NombreUsuario = objeto.NombreUsuario;
+        //                    usuario.ApellidoPaternoU = objeto.ApellidoPaterno;
+        //                    usuario.ApellidoMaternoU = objeto.ApellidoMaterno;
+        //                    usuario.FechaNacimiento = objeto.FechaNacimiento.ToString("dd-MM-yyyy");
+        //                    usuario.Genero = objeto.Sexo;
+        //                    usuario.Password = objeto.Password;
+        //                    usuario.Telefono = objeto.Telefono;
+        //                    usuario.Celular = objeto.Celular;
+        //                    usuario.Curp = objeto.Curp;
+        //                    usuario.UserName = objeto.UserName;
+        //                    usuario.Email = objeto.Email;
 
                             
-                            usuario.Rol = new ML.Rol();
-                            usuario.Rol.IdRol = byte.Parse(objeto.IdRol.ToString());
-                            usuario.Rol.NombreRol = objeto.NombreRol;
+        //                    usuario.Rol = new ML.Rol();
+        //                    usuario.Rol.IdRol = byte.Parse(objeto.IdRol.ToString());
+        //                    usuario.Rol.NombreRol = objeto.NombreRol;
 
-                            usuario.Imagen = objeto.Imagen;
+        //                    //usuario.Imagen = objeto.Imagen;
 
-                            //usuario.Imagen = objeto.Imagen.ToString();
-                            //DIRECCION//
-                            usuario.Direccion = new ML.Direccion();
-                            usuario.Direccion.IdDireccion = objeto.IdDireccion;
-                            usuario.Direccion.Calle = objeto.Calle;
-                            usuario.Direccion.NumeroInterior = objeto.NumeroInterior;
-                            usuario.Direccion.NumeroExterior = objeto.NumeroExterior;
-                            //COLONIA//
-                            usuario.Direccion.Colonia = new ML.Colonia();
-                            usuario.Direccion.Colonia.IdColonia = objeto.IdColonia.Value;
-                            usuario.Direccion.Colonia.NombreColonia = objeto.NombreColonia;
-                            usuario.Direccion.Colonia.CodigoPostal = objeto.CodigoPostal;
-                            //MUNICIPIO//
-                            usuario.Direccion.Colonia.Municipio = new ML.Municipio();
-                            usuario.Direccion.Colonia.Municipio.IdMunicipio = objeto.IdMunicipio.Value;
-                            usuario.Direccion.Colonia.Municipio.NombreMunicipio = objeto.NombreMunicipio;
-                            //ESTADO//
-                            usuario.Direccion.Colonia.Municipio.Estado = new ML.Estado();
-                            usuario.Direccion.Colonia.Municipio.Estado.IdEstado = objeto.IdEstado.Value;
-                            usuario.Direccion.Colonia.Municipio.Estado.NombreEstado = objeto.NombreEstado;
-                            //PAIS// 
-                            usuario.Direccion.Colonia.Municipio.Estado.Pais = new ML.Pais();
-                            usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = objeto.IdPais.Value;
-                            usuario.Direccion.Colonia.Municipio.Estado.Pais.NombrePais = objeto.NombrePais;
+        //                    //usuario.Imagen = objeto.Imagen.ToString();
+        //                    //DIRECCION//
+        //                    usuario.Direccion = new ML.Direccion();
+        //                    usuario.Direccion.IdDireccion = objeto.IdDireccion;
+        //                    usuario.Direccion.Calle = objeto.Calle;
+        //                    usuario.Direccion.NumeroInterior = objeto.NumeroInterior;
+        //                    usuario.Direccion.NumeroExterior = objeto.NumeroExterior;
+        //                    //COLONIA//
+        //                    usuario.Direccion.Colonia = new ML.Colonia();
+        //                    usuario.Direccion.Colonia.IdColonia = objeto.IdColonia.Value;
+        //                    usuario.Direccion.Colonia.NombreColonia = objeto.NombreColonia;
+        //                    usuario.Direccion.Colonia.CodigoPostal = objeto.CodigoPostal;
+        //                    //MUNICIPIO//
+        //                    usuario.Direccion.Colonia.Municipio = new ML.Municipio();
+        //                    usuario.Direccion.Colonia.Municipio.IdMunicipio = objeto.IdMunicipio.Value;
+        //                    usuario.Direccion.Colonia.Municipio.NombreMunicipio = objeto.NombreMunicipio;
+        //                    //ESTADO//
+        //                    usuario.Direccion.Colonia.Municipio.Estado = new ML.Estado();
+        //                    usuario.Direccion.Colonia.Municipio.Estado.IdEstado = objeto.IdEstado.Value;
+        //                    usuario.Direccion.Colonia.Municipio.Estado.NombreEstado = objeto.NombreEstado;
+        //                    //PAIS// 
+        //                    usuario.Direccion.Colonia.Municipio.Estado.Pais = new ML.Pais();
+        //                    usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = objeto.IdPais.Value;
+        //                    usuario.Direccion.Colonia.Municipio.Estado.Pais.NombrePais = objeto.NombrePais;
 
 
-                            result.Objects.Add(usuario);//Agrega todos los datos a usuario
-                            }
-                     }
+        //                    result.Objects.Add(usuario);//Agrega todos los datos a usuario
+        //                    }
+        //             }
                     
-                }
-                result.Correct = true;
-            }// cierre de try
-            catch (Exception ex)
-            {
-                result.Correct = false;
-                result.Ex = ex;
-                result.Message = "Ocurrio un error al cargar la información" + result.Ex;
-                throw;
-            }//(Algún error en el programa)
-            return result;
-        }
+        //        }
+        //        result.Correct = true;
+        //    }// cierre de try
+        //    catch (Exception ex)
+        //    {
+        //        result.Correct = false;
+        //        result.Ex = ex;
+        //        result.Message = "Ocurrio un error al cargar la información" + result.Ex;
+        //        throw;
+        //    }//(Algún error en el programa)
+        //    return result;
+        //}
         public static ML.Result GetByIdEF(int idUsuario)
         {
             ML.Result result = new ML.Result();
